@@ -1,6 +1,6 @@
-import {createGlobalStyle} from 'styled-components'
+import {createGlobalStyle} from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle `
+export const GlobalStyle = createGlobalStyle`
     ::root{
         --background: #FFFFFF
     }
@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle `
         box-sizing: border-box;
     }
 
-    //para o valor de REM se adaptar ao tamanho da tela
+    // para o valor de REM se adaptar ao tamanho da tela
 
     html{
         @media (max-width: 1080px) {
@@ -22,10 +22,17 @@ export const GlobalStyle = createGlobalStyle `
         }
     }
 
+    body, input, textarea, button {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+    }
+
+    h1, h2, h3, h4, h5, h6, strong{
+        font-weight: 600;
+    }
+
+
     button {
         cursor: pointer;
     }
-    
-
-
-`
+`;
