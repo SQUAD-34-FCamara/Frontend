@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import { ImArrowRight2 } from 'react-icons/im';
 
 import {
@@ -17,9 +19,62 @@ import {
   MentorProfileButton
 } from './styles';
 
-import avatar from '../../assets/avatar.jpeg';
+import api from '../../services/api';
+
 
 export default function ListaMentor() {
+  const [mentors, setMentors] = useState([]);
+  const [especialidade, setEspecialidade] = useState('');
+
+  // Array especialidades
+  const especialidadesFiltro = [
+    {value: 'TODOS', name: "Todas"},
+    {value: "FRONTEND", name: "Front-end"},
+    {value: "BACKEND", name: "Back-end"},
+    {value: "MOBILE", name: "Mobile"},
+    {value: "DATASCIENCE", name: "Data Science"},
+    {value: "MACHINELEARNING", name: "Machine Learning"},
+    {value: "BIGDATA", name: "Big Data"},
+    {value: "DEVOPS", name: "DevOps"},
+    {value: "CLOUD", name: "Cloud"},
+    {value: "BLOCKCHAIN", name: "Blockchain"},
+    {value: "DESIGN", name: "Design"},
+  ];
+
+  // Lista todos os mentores
+  useEffect(() => {
+    api.get('/mentores')
+      .then(response => {
+        setMentors(response.data.items)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }, []);
+
+  useEffect(() => {
+    if(especialidade !== "TODOS") {
+      api.get(`/mentores?especialidade=${especialidade}`)
+      .then(response => {
+        setMentors(response.data.items)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    } else {
+      api.get('/mentores')
+      .then(response => {
+        setMentors(response.data.items)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    }
+  }, [especialidade]);
+
+  console.log(mentors)
+  console.log(especialidade)
+
   return (
     <Container>
       <Content>
@@ -32,10 +87,17 @@ export default function ListaMentor() {
 
         <FilterArea>
           <label>Qual especialidade você procura?</label>
-          <select>
-            <option value="Front-end">Front-end</option>
-            <option value="Back-end">Back-end</option>
-            <option value="Full-stack">Full-stack</option>
+          <select
+            value={especialidade}
+            onChange={e => setEspecialidade(e.target.value)}
+          >
+            {
+              especialidadesFiltro.map(especialidadeFiltro =>(
+                <option value={especialidadeFiltro.value} key={especialidadeFiltro.value}>
+                  {especialidadeFiltro.name}
+                </option>
+              ))
+            }
           </select>
         </FilterArea>
 
@@ -45,66 +107,46 @@ export default function ListaMentor() {
           <h4>Conheça nossas feras:</h4>
         </MentorListTitle>
         <MentorList>
-          <MentorListItem>
-            <AvatarMentor>
-              <img src={avatar} alt="Foto do rosto do(a) mentor(a)" />
-            </AvatarMentor>
-
-            <MentorInformation>
-              <MentorName>Fulano de tal</MentorName>
-              <MentorSpecialty>Especialidade tal</MentorSpecialty>
-            </MentorInformation>
-
-            <MentorProfileButtonIcon>
-              <ImArrowRight2 />
-            </MentorProfileButtonIcon>
-
-            <MentorProfileButton>
-              Ver Perfil
-            </MentorProfileButton>
-
-          </MentorListItem>
-
-          <MentorListItem>
-            <AvatarMentor>
-              <img src={avatar} alt="Foto do rosto do(a) mentor(a)" />
-            </AvatarMentor>
-
-            <MentorInformation>
-              <MentorName>Fulano de tal</MentorName>
-              <MentorSpecialty>Especialidade tal</MentorSpecialty>
-            </MentorInformation>
-
-            <MentorProfileButtonIcon>
-              <ImArrowRight2 />
-            </MentorProfileButtonIcon>
-
-            <MentorProfileButton>
-              Ver Perfil
-            </MentorProfileButton>
-
-          </MentorListItem>
           
+            {
+              mentors.map((mentor) => {
+                const separaNome = mentor?.nome.split(' ', 2)
+                const primeiroNome = separaNome[0]
 
-          <MentorListItem>
-            <AvatarMentor>
-              <img src={avatar} alt="Foto do rosto do(a) mentor(a)" />
-            </AvatarMentor>
+                return (
+                  <MentorListItem key={mentor?.id}>
+                    <AvatarMentor>
+                      <img src={mentor?.linkImage} alt="Foto do rosto do(a) mentor(a)" />
+                    </AvatarMentor>
 
-            <MentorInformation>
-              <MentorName>Fulano de tal</MentorName>
-              <MentorSpecialty>Especialidade tal</MentorSpecialty>
-            </MentorInformation>
+                    <MentorInformation>
+                      <MentorName>{primeiroNome}</MentorName>
+                      <MentorSpecialty>
+                        {especialidade === "TODOS" || !especialidade
+                          ? 
+                            mentor?.especialidades.length > 1 
+                              ?
+                                mentor?.especialidades[0] + '...'
+                              :
+                                mentor?.especialidades[0]
+                          : 
+                            especialidade
+                        }
+                      </MentorSpecialty>
+                    </MentorInformation>
 
-            <MentorProfileButtonIcon>
-              <ImArrowRight2 />
-            </MentorProfileButtonIcon>
+                    <MentorProfileButtonIcon>
+                      <ImArrowRight2 />
+                    </MentorProfileButtonIcon>
 
-            <MentorProfileButton>
-              Ver Perfil
-            </MentorProfileButton>
-          </MentorListItem>
-
+                    <MentorProfileButton>
+                      Ver Perfil
+                    </MentorProfileButton>
+                  </MentorListItem>
+                )
+              }
+            ) 
+          }
         </MentorList>
       </Content>
     </Container>
