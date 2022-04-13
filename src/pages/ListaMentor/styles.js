@@ -283,6 +283,7 @@ export const AvatarMentor = styled.div`
     height: 64px;
     border-radius: 50%;
     border: 1px solid #989898;
+    object-fit: cover;
   }
 
   @media (min-width: 768px) {
