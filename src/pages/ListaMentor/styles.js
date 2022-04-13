@@ -253,6 +253,7 @@ export const MentorListItem = styled.div`
     height: 280px;
     padding: 6px 16px;
     margin-bottom: 8px;
+    margin-right: 6px;
 
     flex-direction: column;
 
@@ -353,20 +354,20 @@ export const MentorName = styled.p`
 `;
 
 export const MentorSpecialty = styled.p`
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 400;
   margin-bottom: 8px;
 
   @media (min-width: 768px) {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   @media (min-width: 1024px) {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   @media (min-width: 1440px) {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 `;
 
