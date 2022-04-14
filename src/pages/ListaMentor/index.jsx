@@ -53,7 +53,11 @@ export default function ListaMentor() {
   }, []);
 
   useEffect(() => {
-    if(especialidade !== "TODOS") {
+    handleListBySpecialty()
+  }, [especialidade])
+
+  function handleListBySpecialty() {
+    if(especialidade !== "TODOS" && !!especialidade) {
       api.get(`/mentores?especialidade=${especialidade}`)
       .then(response => {
         setMentors(response.data.items)
@@ -70,7 +74,13 @@ export default function ListaMentor() {
         console.log(error)
       })
     }
-  }, [especialidade]);
+  }
+
+  function handleSelectChange(e) {
+    e.preventDefault();
+    setEspecialidade(e.target.value)
+    
+  }
 
   console.log(mentors)
   console.log(especialidade)
@@ -89,7 +99,7 @@ export default function ListaMentor() {
           <label>Qual especialidade você procura?</label>
           <select
             value={especialidade}
-            onChange={e => setEspecialidade(e.target.value)}
+            onChange={handleSelectChange}
           >
             {
               especialidadesFiltro.map(especialidadeFiltro =>(
