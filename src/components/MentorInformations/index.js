@@ -1,12 +1,9 @@
 
-import foto from '../../Assets/foto-teste.jpg';
-import Select from 'react-select';
+import foto from '../../assets/foto-teste.jpg';
+// import Select from 'react-select';
 import React from 'react';
 
 import * as S from './styles';
-
-
-
 
 export default function MentorInformations() {
 

@@ -1,7 +1,6 @@
 import { Route, Routes as MyRoutes } from 'react-router-dom';
 
 import ListaMentor from './pages/ListaMentor';
-import Home from './pages/Home';
 
 import MentorDetail from './pages/MentorDetail';
 
