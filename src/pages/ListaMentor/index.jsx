@@ -25,6 +25,7 @@ import api from '../../services/api';
 export default function ListaMentor() {
   const [mentors, setMentors] = useState([]);
   const [especialidade, setEspecialidade] = useState('');
+  const [idMentor, setIdMentor] = useState('');
 
   // Array especialidades
   const especialidadesFiltro = [
@@ -52,10 +53,12 @@ export default function ListaMentor() {
       })
   }, []);
 
+  // Executa função handleListBySpecialty sempre que o estado "especialidade for alterado"
   useEffect(() => {
     handleListBySpecialty()
   }, [especialidade])
 
+  // Função para chamar o endpoint de acordo com a especialidade contida no estado
   function handleListBySpecialty() {
     if(especialidade !== "TODOS" && !!especialidade) {
       api.get(`/mentores?especialidade=${especialidade}`)
@@ -76,14 +79,16 @@ export default function ListaMentor() {
     }
   }
 
+   // Seta especialidade no estado
   function handleSelectChange(e) {
     e.preventDefault();
     setEspecialidade(e.target.value)
-    
   }
 
-  console.log(mentors)
-  console.log(especialidade)
+  // Salva id do mentor selecionado no localStorage
+  // function handleClickProfileButton (e, id) {
+    
+  // }
 
   return (
     <Container>
@@ -145,11 +150,17 @@ export default function ListaMentor() {
                       </MentorSpecialty>
                     </MentorInformation>
 
-                    <MentorProfileButtonIcon>
+                    <MentorProfileButtonIcon
+                       key={mentor?.id}
+                       onClick={() => localStorage.setItem("id_mentor", mentor?.id)}
+                     >
                       <ImArrowRight2 />
                     </MentorProfileButtonIcon>
 
-                    <MentorProfileButton>
+                    <MentorProfileButton
+                      key={mentor?.id}
+                      onClick={() => localStorage.setItem("id_mentor", mentor?.id)}
+                    >
                       Ver Perfil
                     </MentorProfileButton>
                   </MentorListItem>
