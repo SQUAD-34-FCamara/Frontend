@@ -63,67 +63,146 @@ export const SeparationLine = styled.div`
 
 export const Greetings = styled.div`
   width: 90%;
-  height: 80px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 16px 0;
 
   h3 {
     color: #040303;
     margin-bottom: 8px;
   }
 
-  p {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: #242424;
+  div {
+   
+    label {
+      font-size: 0.8rem;
+      line-height: 1rem;
+      font-weight: 500;
+      color: #242424;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      input {
+        width: 160px;
+        height: 32px;
+        border: none;
+        border-radius: 6px;
+        background-color: #fafafa;
+        margin-top: 6px;
+        margin-right: 4px;
+        padding: 0 10px;
+      }
+
+      button {
+        width: 32px;
+        height: 32px;
+        border: none;
+        border-radius: 6px;
+        background-color: #fe4400;
+        margin-top: 6px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: filter 0.3s;
+
+        svg {
+          font-size: 24px;
+        }
+
+        &:hover {
+          filter: brightness(0.8)
+        }
+      }
+    }
+    
   }
 
-  @media(min-width: 425px) {
-    p {
-      font-size: 0.85rem;
-    }
-  }
 
   @media(min-width: 768px) {
     width: 80%;
-    height: 100px;
 
     h3 {
-      font-size: 1.4rem;
-      margin-bottom: 6px;
+      font-size: 1.6rem;
+      margin-bottom: 4px;
     }
 
-    p {
-      font-size: 1rem;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      label {
+        font-size: 0.9rem;
+        margin-right: 24px;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+
+        input {
+          height: 40px;
+          width: 200px;
+          margin-right: 6px;
+        }
+
+        button {
+          width: 40px;
+          height: 40px;
+
+          svg {
+            font-size: 28px;
+          }
+        }
+      }
     }
   }
 
   @media(min-width: 1024px) {
     width: 80%;
-    height: 120px;
 
     h3 {
       font-size: 2rem;
       margin-bottom: 8px;
     }
 
-    p {
-      font-size: 1.4rem;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      label {
+        font-size: 1.1rem;
+        margin-right: 0;
+      }
+
+      div {
+        input {
+          height: 40px;
+          width: 280px;
+          margin-right: 8px;
+        }
+      }
     }
   }
 
   @media(min-width: 1440px) {
     width: 80%;
-    height: 140px;
 
     h3 {
-      font-size: 2rem;
-      margin-bottom: 8px;
+      font-size: 2.2rem;
     }
 
-    p {
-      font-size: 1.4rem;
+    div {
+      label {
+        font-size: 1.2rem;
+      }
     }
   }
 `;
@@ -153,21 +232,41 @@ export const MentorshipItem = styled.div`
   justify-content: space-between;
   padding: 4px 8px;
 
+  & + div {
+    margin-top: 8px;
+  }
+
   @media(min-width: 425px) {
     height: 80px;
     justify-content: flex-start;
+
+    & + div {
+      margin-top: 10px;
+    }
   }
 
   @media(min-width: 768px) {
     height: 96px;
+
+    & + div {
+      margin-top: 12px;
+    }
   }
 
   @media(min-width: 1024px) {
     height: 120px;
+   
+    & + div {
+      margin-top: 14px;
+    }
   }
 
   @media(min-width: 1440px) {
     height: 132px;
+
+      & + div {
+      margin-top: 16px;
+    }
   }
 `;
 
