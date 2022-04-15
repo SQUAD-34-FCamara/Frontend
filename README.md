@@ -53,7 +53,7 @@ Foi intenso, desafiador, mas como recompensa tivemos grandes aprendizados além 
 
 ## 🚀 No ar!
 
-Você pode encontrar a Technical Share acessando o link abaixo:
+Você pode encontrar a Technical Share acessando o link: 
 [Technical Share](https://technical-share-squad34.herokuapp.com/)
 
 ---
