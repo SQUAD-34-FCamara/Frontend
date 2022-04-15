@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { ImArrowRight2 } from 'react-icons/im';
 
@@ -25,7 +26,6 @@ import api from '../../services/api';
 export default function ListaMentor() {
   const [mentors, setMentors] = useState([]);
   const [especialidade, setEspecialidade] = useState('');
-  const [idMentor, setIdMentor] = useState('');
 
   // Array especialidades
   const especialidadesFiltro = [
@@ -85,10 +85,6 @@ export default function ListaMentor() {
     setEspecialidade(e.target.value)
   }
 
-  // Salva id do mentor selecionado no localStorage
-  // function handleClickProfileButton (e, id) {
-    
-  // }
 
   return (
     <Container>
@@ -154,14 +150,16 @@ export default function ListaMentor() {
                        key={mentor?.id}
                        onClick={() => localStorage.setItem("id_mentor", mentor?.id)}
                      >
-                      <ImArrowRight2 />
+                       <Link to="/mentor">
+                        <ImArrowRight2 />
+                      </Link>
                     </MentorProfileButtonIcon>
 
                     <MentorProfileButton
                       key={mentor?.id}
                       onClick={() => localStorage.setItem("id_mentor", mentor?.id)}
                     >
-                      Ver Perfil
+                      <Link to="/mentor">Ver Perfil</Link>
                     </MentorProfileButton>
                   </MentorListItem>
                 )

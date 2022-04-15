@@ -101,7 +101,7 @@ export const MentorTimer = styled.div `
     
 
         .submit{
-            width: 20vh;
+            width: 30vh;
             margin-top: 2rem;
             align-self: center;
             background-color: #fe4400;

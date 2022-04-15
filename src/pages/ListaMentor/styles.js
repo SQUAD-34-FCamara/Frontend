@@ -20,6 +20,8 @@ export const Content = styled.div`
   overflow: auto;
 
   @media (min-width: 425px) {
+    max-width: 400px;
+    max-width: 80%;
     margin: 0 auto; 
   }
 
