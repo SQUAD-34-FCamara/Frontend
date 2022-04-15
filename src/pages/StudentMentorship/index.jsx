@@ -15,8 +15,6 @@ import {
   CancelButton
 } from './styles';
 
-import avatar from '../../assets/foto-teste.jpg';
-
 import api from '../../services/api';
 import { useEffect, useState } from 'react';
 
