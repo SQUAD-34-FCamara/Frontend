@@ -84,9 +84,11 @@ export default function MentorInformations() {
                                     >
 
                                     {
+                                        
                                         mentor.agendamentos?.map((agendamento) => (
+                                            agendamento.status === true && 
                                             <option key={agendamento.id} value={agendamento.id}>
-                                                {agendamento.status === true && agendamento.data}   
+                                                {agendamento.data}   
                                             </option>
                                         ))
                                     }
