@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Technical Share
+#### Front-end 
+  A Technical Share foi desenvolvido a partir de uma demanda identificada pelo #SangueLaranja Luiz Guilherme! A proposta pedia que nós, participantes do Hackathon, elaborássemos uma plataforma onde você encontra pessoas da tecnologia com conhecimentos diversos para tirar suas dúvidas sobre a área ou te orientar no aprendizado de novas habilidades. Daí surgiu a ideia de criarmos um MVP onde fosse possível os colaboradores do Grupo FCamara receberem e darem mentorias de assuntos que envolvem o seu trabalho, como tecnologia, carreira.
+  
+### 📋 Pré-requisitos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Antes de rodar o projeto na sua máquina, certifique-se de ter instalado: 
 
-## Available Scripts
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/)
 
-In the project directory, you can run:
+### 🔧 Instalação
 
-### `yarn start`
+Para rodar o projeto copie e cole os seguintes comandos no seu terminal:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Clonar o repositório na sua pasta de preferência:
+```
+https://github.com/SQUAD-34-FCamara/Frontend.git 
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Instalar as dependências da aplicação. Recomendo o uso do [Yarn](https://yarnpkg.com/)
+```
+yarn 
+```
 
-### `yarn test`
+- Executar a aplicação no seu localhost
+```
+yarn start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Construído com
 
-### `yarn build`
+O Front-end da Technical Share foi desenvolvido com [ReactJS](https://reactjs.org/) e bibliotecas como:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Axios](https://axios-http.com/docs/intro)
+- [React Router Dom](https://github.com/remix-run/react-router/blob/main/docs/getting-started/tutorial.md)
+- [Styled Components](https://styled-components.com/docs/basics)
+- [React Icons](https://react-icons.github.io/react-icons/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ✒️ Autores
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para a conclusão deste MVP, foi indispensável a participação dos seguintes desenvolvedores:
 
-### `yarn eject`
+* **Giselle Piasetzki** [Front-end](https://www.linkedin.com/in/gisellepiasetzki/)
+* **Virginia Lemes** - Back-end
+* **Paulo Henrique** - Back-end
+* **Rafael Santana** - [Front-end](https://www.linkedin.com/in/rafaelgoncalvessantana/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🎁 Expressões de gratidão
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A squad 34 agradece imensamente a oportunidade de sermos testados no Hackathon do **Grupo FCamara**. 
+Foi intenso, desafiador, mas como recompensa tivemos grandes aprendizados além de termos a oportunidade de conhecermos pessoas incríveis. Falo tanto de nós, **Squad 34**, quanto dos ** Mentores #SangueLaranja**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+⌨️ com ❤️ SQUAD 34 😊
