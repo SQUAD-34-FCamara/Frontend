@@ -51,5 +51,10 @@ Para a conclusão deste MVP, foi indispensável a participação dos seguintes d
 A squad 34 agradece imensamente a oportunidade de sermos testados no Hackathon do **Grupo FCamara**. 
 Foi intenso, desafiador, mas como recompensa tivemos grandes aprendizados além de termos a oportunidade de conhecermos pessoas incríveis. Falo tanto de nós, **Squad 34**, quanto dos ** Mentores #SangueLaranja**.
 
+## 🚀 No ar!
+
+Você pode encontrar a Technical Share acessando o link abaixo:
+[Technical Share](https://technical-share-squad34.herokuapp.com/)
+
 ---
 ⌨️ com ❤️ SQUAD 34 😊
