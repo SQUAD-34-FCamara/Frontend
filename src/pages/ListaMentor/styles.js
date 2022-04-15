@@ -42,11 +42,40 @@ export const MentorListInstructions = styled.div`
   width: 90%;
   margin-bottom: 16px;
 
-  h2 {
-    font-size: 1.5rem;
-    margin: 8px 0 12px;
-    color: #cbc7c7;
+  div {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 8px 0 12px;
+      color: #cbc7c7;
+    }
+
+    button {
+      width: 160px;
+      height: 36px;
+      border: none;
+      border-radius: 6px;
+      margin: 16px 0;
+      align-self: flex-end;
+      background-color: #fafafa;
+      font-weight: 500;
+
+      transition: background-color 0.2s;
+      transition: border 0.2s;
+      transition: color 0.2s;
+
+      &:hover {
+        background-color: #cbc7c7;
+        border: 2px solid #989898;
+        color: #fe4400;
+        font-weight: 600;
+      }
+    }
   }
+  
 
   p {
     font-size: 0.8rem;

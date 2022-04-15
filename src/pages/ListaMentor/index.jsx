@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { ImArrowRight2 } from 'react-icons/im';
 
@@ -24,6 +24,8 @@ import api from '../../services/api';
 
 
 export default function ListaMentor() {
+  const navigate = useNavigate();
+
   const [mentors, setMentors] = useState([]);
   const [especialidade, setEspecialidade] = useState('');
 
@@ -90,7 +92,10 @@ export default function ListaMentor() {
     <Container>
       <Content>
         <MentorListInstructions>
-          <h2>Encontre seu mentor...</h2>
+          <div>
+            <h2>Encontre seu mentor...</h2>
+            <button onClick={() => navigate('/student')}>Minhas mentorias</button>
+          </div>
           <p><b>1.</b> Filtre por especialidade!</p>
           <p><b>2.</b> Clique em 'VerPerfil' e agende um dia e horário!</p>
           <p><b>3.</b> Tire suas dúvidas e cresça na sua carreira!</p>
