@@ -42,7 +42,7 @@ O Front-end da Technical Share foi desenvolvido com [ReactJS](https://reactjs.or
 Para a conclusão deste MVP, foi indispensável a participação dos seguintes desenvolvedores:
 
 * **Giselle Piasetzki** [Front-end](https://www.linkedin.com/in/gisellepiasetzki/)
-* **Virginia Lemes** - Back-end
+* **Virginia Lemes** - [Back-end](https://www.linkedin.com/in/paulo-henrique-vicen/)
 * **Paulo Henrique** - Back-end
 * **Rafael Santana** - [Front-end](https://www.linkedin.com/in/rafaelgoncalvessantana/)
 
